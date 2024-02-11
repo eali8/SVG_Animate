@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle changing color</title>
+<style>
+
+   body{
+    background: pink;
+   }
+
+   svg { 
+    position: absolute; 
+    top:0; 
+    right:0; 
+    bottom:0; 
+    left:0; 
+    margin: auto;
+    }
+
+     #rec{
+        fill: lime; 
+        animation: rectANimation 6s forwards; 
+        }
+
+    .path{
+    stroke-dasharray: 350; 
+    stroke-dashoffset: 0; 
+    animation: boxAnimation 3s infinite linear; 
+}
+      @keyframes rectAnimation {
+      0% {
+        x: 300;
+        y: 100;
+        width: 300;
+        height: 100;
+      }
+      100% {
+        x: 0;
+        y: 0;
+        width: 800;
+        height: 300;
+      }
+    }
+
+    @keyframes boxAnimation{
+        0%{
+        stroke-dashoffset: 350;
+        }
+        100%{
+        stroke-dashoffset: 0;
+        }
+    }
+
+    footer{
+        color: #8c1528; 
+        text-align: center;
+        width: 100%;
+        letter-spacing: 1.5px; 
+        position:absolute; 
+        bottom:50px;
+    }
+
+</style>
+
+</head>
+<body>
+    <svg width="350px" height="350px" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 250 250">
+
+        <rect id="rec" x="300" y="100" width="300" height="100"> 
+           <animate attributeName="x" attributeType="XML" begin="0s" dur="6s" fill="freeze" from="300" to="0" /> 
+            <animate attributeName="y" attributeType="XML" begin="0s" dur="6s" fill="freeze" from="100" to="0" /> 
+            <animate attributeName="width" attributeType="XML" begin="0s" dur="6s" fill="freeze" from="300" to="800" /> 
+            <animate attributeName="height" attributeType="XML" begin="0s" dur="6s" fill="freeze" from="100" to="300" /> 
+            <animate attributeName="fill" attributeType="CSS" from="lime" to="salmon" begin="2s" dur="4s" fill="freeze" /> 
+          </rect>
+
+        <path class="path" fill="transparent" stroke="#000000" stroke-width="4" d="M242 8v234H8V8h234m8-8H0v250h250V0Z"></path>
+        
+      </svg>
+    
+</body>
+
+<footer>
+    &copy;
+    <a href="https://www.w3schools.com/graphics/tryit.asp?filename=trysvg_animate2">Click Link For Source</a>
+    
+</footer>
+</html>
